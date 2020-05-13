@@ -15,7 +15,7 @@ class CallCenter(LineReceiver):
     def lineReceived(self, line):
         command = line.split()
         if command[0] == 'call':
-            self.sendLine('Call ' + command[1] + 'received')
+            self.sendLine('Call ' + command[1] + ' received')
             if self.A.state == 'available':
                 self.sendLine('Call ' + command[1] + ' ringing for operator A')
                 self.A.state = 'ringing'
